@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body{
+	
+}
+
+header{
+	width: 100%;
+	z-index: 10;
+	position: fixed;
+}
+
+#banner{
+	width: 100%;
+	height: 500px;
+	position: fixed;
+	top: 50px;
+	background-color: #abcabc;
+}
+
+#content{
+	width: 100%;
+	position: relative;
+	top: 400px;
+	background-color: #ebebeb;
+	height: 1500px;
+}
