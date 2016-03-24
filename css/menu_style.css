@@ -32,6 +32,17 @@ body {
     transition: 0.3s
 }
 
+.sidenav .menu-item-line{
+    position: absolute;
+    right: 25px;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s
+}
+
 .sidenav .firstitem{
     z-index: 10;
     padding-top: 40px;
@@ -54,11 +65,12 @@ body {
 }
 
 
-.sidenav a:hover, .offcanvas a:focus{
+.sidenav .menu-item-line:hover, .offcanvas .menu-item-line:focus{
     color: #ED1C3B;
 }
 
 .closebtn {
+    text-align: left;
     position: absolute;
     top: 0;
     left: 0;
@@ -69,7 +81,7 @@ body {
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav .menu-item-line {font-size: 18px;}
 }
 
 #header{
