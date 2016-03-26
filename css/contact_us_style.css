@@ -65,7 +65,7 @@
 
 /* Icons ---------------------------------- */
 #name{
-	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-image: url('../img/contact_us_name.svg');
 	background-size: 30px 30px;
 	padding-right: 60px;
 	background-position: right 11px top 8px;
@@ -73,7 +73,7 @@
 }
 
 #name:focus{
-	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+	background-image: url('../img/contact_us_name.svg');
 	background-size: 30px 30px;
 	padding-right: 60px;
 	background-position: right 11px top 8px;
@@ -81,7 +81,7 @@
 }
 
 #email{
-	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-image: url('../img/contact_us_mail.svg');
 	background-size: 30px 30px;
 	padding-right: 60px;
 	background-position: right 11px top 8px;
@@ -89,7 +89,7 @@
 }
 
 #email:focus{
-	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+	background-image: url('../img/contact_us_mail.svg');
 	background-size: 30px 30px;
 	padding-right: 60px;
 	background-position: right 11px top 8px;
@@ -97,7 +97,7 @@
 }
 
 #comment{
-	background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+	background-image: url('../img/contact_us_comment.svg');
 	background-size: 30px 30px;
 	padding-right: 60px;
 	background-position: right 11px top 8px;
