@@ -5,3 +5,8 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+function openLink()
+{
+	window.location.href = "first_page.html";
+}
