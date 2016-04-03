@@ -11,3 +11,13 @@
 table.table tbody tr:hover td{
     color: #ED1C3B !important;
 }
+
+.editProfileBtn{
+	background-color: #FCEEF9;
+	color: #000;
+}
+
+.editProfileBtn:hover{
+	background-color: #FFEEF9;
+	border-color: #903;
+}
