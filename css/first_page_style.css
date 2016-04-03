@@ -1,4 +1,10 @@
+@font-face {
+    font-family: myFont;
+    src: url('../fonts/BYekan.woff');
+}
+
 * {
+    font-family: 'myFont',"Lato", sans-serif !important;
   margin: 0;
   padding: 0;
   border: 0;
@@ -26,7 +32,7 @@ header{
 #content{
 	width: 100%;
 	position: relative;
-	top: 400px;
+	top: 450px;
 	background-color: #FCEEF9;
 	height: 1500px;
 	padding: 50px;
