@@ -23,7 +23,7 @@
 	padding-left:35px;
 	padding-right:35px;
 	padding-top:35px;
-	padding-bottom:50px;
+	padding-bottom:25px;
 	width: 450px;
 	float: left;
 	left: 50%;
@@ -63,7 +63,55 @@
 	border:#903 solid 3px;
 }
 
+/* Icons ---------------------------------- */
+#name{
+	background-image: url('../img/contact_us_name.svg');
+	background-size: 30px 30px;
+	padding-right: 60px;
+	background-position: right 11px top 8px;
+	background-repeat: no-repeat;
+}
 
+#name:focus{
+	background-image: url('../img/contact_us_name.svg');
+	background-size: 30px 30px;
+	padding-right: 60px;
+	background-position: right 11px top 8px;
+	background-repeat: no-repeat;
+}
+
+#password{
+	background-image: url('../img/password.png');
+	background-size: 30px 30px;
+	padding-right: 60px;
+	background-position: right 11px top 8px;
+	background-repeat: no-repeat;
+}
+
+#password:focus{
+	background-image: url('../img/password.png');
+	background-size: 30px 30px;
+	padding-right: 60px;
+	background-position: right 11px top 8px;
+	background-repeat: no-repeat;
+}
+
+
+#email{
+	background-image: url('../img/contact_us_mail.svg');
+	background-size: 30px 30px;
+	padding-right: 60px;
+	background-position: right 11px top 8px;
+	background-repeat: no-repeat;
+}
+
+#email:focus{
+	background-image: url('../img/contact_us_mail.svg');
+	background-size: 30px 30px;
+	padding-right: 60px;
+	background-position: right 11px top 8px;
+	background-repeat: no-repeat;
+}
 
 textarea {
     width: 100%;
@@ -78,7 +126,6 @@ input:focus, textarea:focus {
 }
 
 #button-red{
-	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 	float:left;
 	width: 100%;
 	border: #fbfbfb solid 4px;
@@ -86,11 +133,10 @@ input:focus, textarea:focus {
 	background-color: #903;
 	color:#fff;
 	font-size:24px;
-	padding-top:22px;
-	padding-bottom:22px;
+	padding-top:5px;
+	padding-bottom:5px;
 	transition: all 0.3s;
   margin-top:-4px;
-  font-weight:700;
 }
 
 #button-red:hover{
@@ -102,14 +148,9 @@ input:focus, textarea:focus {
 	color: #3498db;
 }
 	
-.ease {
-	width: 0px;
-	height: 74px;
-	background-color: #fbfbfb;
-	transition: .3s ease;
-}
 
-.submit:hover .ease{
+
+.submit:hover {
   width:100%;
   background-color:white;
 }
@@ -123,44 +164,4 @@ input:focus, textarea:focus {
 		padding-left: 3%;
 		padding-right: 3%;
 	}
-}
-
-#deadline{
-	background-image: url('../img/project_time_estimated.png');
-	background-size: 30px 30px;
-	padding-right: 60px;
-	background-position: right 11px top 8px;
-	background-repeat: no-repeat;
-}
-
-#deadline:focus{
-	background-image: url('../img/project_time_estimated.png');
-	background-size: 30px 30px;
-	padding-right: 60px;
-	background-position: right 11px top 8px;
-	background-repeat: no-repeat;
-}
-
-#price{
-	background-image: url('../img/project_price.png');
-	background-size: 30px 30px;
-	padding-right: 60px;
-	background-position: right 11px top 8px;
-	background-repeat: no-repeat;
-}
-
-#price:focus{
-	background-image: url('../img/project_price.png');
-	background-size: 30px 30px;
-	padding-right: 60px;
-	background-position: right 11px top 8px;
-	background-repeat: no-repeat;
-}
-
-#comment{
-	background-image: url('../img/contact_us_comment.svg');
-	background-size: 30px 30px;
-	padding-right: 60px;
-	background-position: right 11px top 8px;
-	background-repeat: no-repeat;
 }
