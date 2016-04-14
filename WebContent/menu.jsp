@@ -1,3 +1,4 @@
+<%@page import="utils.Tag"%>
 <html>
 	<head>
 		<link rel="stylesheet" href="css/menu_style.css">
@@ -6,7 +7,10 @@
 	<body style= "margin:0">
 		<div id = "mySidenav" class = "sidenav">
 			<a href="javascript:void(0)" class="closebtn menu-item-line" onclick="closeNav()">x</a>
-			<a href="login.jsp" class="firstitem menu-item-line">ورود</a>
+			<%if (session.getAttribute(Tag.USER)!= null)
+				out.println("<a href='user_profile_editable.jsp' class='firstitem menu-item-line'>پروفایل</a>");
+			else
+				out.println("<a href='login.jsp' class='firstitem menu-item-line'>ورود</a>");%>
 			<a href="projects_list.jsp" class="seconditem menu-item-line">پروژه&nbsp;ها</a>
 			<a href="contact-us.jsp" class="thirditem menu-item-line">ارتباط&nbsp;با&nbsp;ما</a>
 			<a href="about_us.jsp" class="forthitem menu-item-line">درباره&nbsp;ما</a>

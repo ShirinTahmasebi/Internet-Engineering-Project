@@ -1,17 +1,17 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import utils.Tag;
+import javax.servlet.http.HttpSession;
 
 import model.User;
+import utils.Response;
+import utils.Tag;
 
 public class LoginController extends HttpServlet{
 
@@ -23,22 +23,24 @@ public class LoginController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setContentType("text/html");
-		response.setCharacterEncoding("UTF-8");
-		PrintWriter out=response.getWriter();
 		
-		String userName=request.getParameter("name");
-		String password=request.getParameter("password");
+	    
+	    
+		Response.initialize(response);
+		HttpSession session = request.getSession();
+		String userName=request.getParameter(Tag.USER_NAME);
+		String password=request.getParameter(Tag.PASSWORD);
 		
-		User bean=new User();
-		bean.setUserName(userName);
-		bean.setPassword(password);
-		request.setAttribute(Tag.USER ,bean);
+		User user =new User();
+		user.setUserName(userName);
+		user.setPassword(password);
+		request.setAttribute(Tag.USER ,user);
+		session.setAttribute(Tag.USER, user);
 		
 		boolean status= true;
 		
 		if(status){
-			RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher(Tag.LOGIN_PAGE);
 			rd.forward(request, response);
 		}
 	}
