@@ -9,7 +9,8 @@ pageEncoding="UTF-8"
 <body>
 	<%@ include file="menu.jsp" %> 
 	<div style="height:50px;"></div>
-	<script src="js/table_contents.js"></script>
+	<%@ include file="project_table_contents.jsp" %> 
+	
 
 	
 

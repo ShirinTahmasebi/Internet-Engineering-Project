@@ -23,9 +23,9 @@ pageEncoding="UTF-8"
     	<div id="form-main" dir = "rtl">
   			<div id="form-div">
     		
-    		<form class="form" id="form1"  role="form" method="post">
+    		<form class="form" id="form1"  role="form" method="post" action = "LoginController">
       			<p class="name" >
-        			<input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="نام کاربری" id="name" />
+        			<input name="userName" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="نام کاربری" id="name" />
       			</p>
       
       			<p class="password">
@@ -42,7 +42,7 @@ pageEncoding="UTF-8"
       
     		</form>
     		<br>
-    		<p>اگر حساب کاربری ندارید، برای ثبت نام <a href="register.html">اینجا</a> را کلیک کنید.</p>
+    		<p>اگر حساب کاربری ندارید، برای ثبت نام <a href="register.jsp">اینجا</a> را کلیک کنید.</p>
 
   			</div>
   		</div>
