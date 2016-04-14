@@ -5,14 +5,27 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">   
 <script src="js/jquery-latest.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <%@ page 
+language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"
+%>
 <body style= " text-align: justify; text-justify: inter-word;">
-	<script src="js/menu_contents.js"></script>
+	<%@ include file="menu.jsp" %> 
 
 	<div class = "container" dir="rtl">
 
+
     <hr>
-    <p style = "font-size:30px;">اطلاعات شخصی:</p>
+
+     <div class = "row" >
+
+      <a href="edit_profile.html" class="btn  editProfileBtn btn-block" role="button">ویرایش پروفایل</a>
+   
+    </div>
 		<hr>
+    <p style = "font-size:30px;">اطلاعات شخصی:</p>
+    <hr>
 
 		<div class = "row" >
 			<div class = "col-md-9 col-sm-9 col-xs-9">شیرین طهماسبی</div>
@@ -47,133 +60,11 @@
 			<div class = "col-md-3 col-sm-3 col-xs-3">تاریخ تولد:</div>
 		</div>
 
-    <hr>
+      <hr>
 
     <div class = "row" >
-      <div class = "col-md-9 col-sm-9 col-xs-9"></div>
-      <div class = "col-md-3 col-sm-3 col-xs-3"><p style = "font-size:30px;">اطلاعات رزومه:</p></div>
-    </div>
-    
-    <hr>
-
-    <div class = "row" >
-      <div class = "col-md-9 col-sm-9 col-xs-9">این قسمت برای توضیحاتیست که خود کاربر میخواهد ارائه دهد. برای مثال اگر مقام یا جایگاه خاصی را در مسابقه یا المپیاد کسب کرده است. یا اگر مایل به ذکر مدرک تحصیلی و دانشگاه خود میباشد و ...</div>
-      <div class = "col-md-3 col-sm-3 col-xs-3">توضیحات:</div>
-    </div>
-    <hr>
-
-    <div class = "row" >
-      <div class = "col-md-9 col-sm-9 col-xs-9"></div>
-      <div class = "col-md-3 col-sm-3 col-xs-3">مهارت های شما:</div>
-    </div>
-
-
-  
-    <div style="margin:20px auto" class= "table-body container">  
-      <div class="table-responsive">
-      <table id="myTable"class="table hover" collapsing="0" width="100%" >
-            <thead>  
-                <tr >  
-                  <th style="text-align:right;">عنوان&nbsp;مهارت</th>  
-                  <th style="text-align:right;">میزان تسلط </th>   
-                  <th style="text-align:right;">توضیحات</th>  
-                </tr>  
-            </thead>  
-            <tbody>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr> 
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr> 
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr> 
-               <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr> 
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr> 
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>  
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>
-                <tr>  
-                  <td>برنامه نویسی اندروید</td>  
-                  <td>متوسط</td>  
-                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
-                </tr>
-            </tbody>  
-          </table>  
-      </div>
-  </div>
-
-		<hr>
-<div class = "row" >
-      
-      <div class = "col-md-9 col-sm-9 col-xs-9"></div>
+      <a href="creat_new_project.html" class="btn btn-info col-md-2 col-sm-2 col-xs-2" role="button">ایجاد شرکت جدید</a>
+      <div class = "col-md-7 col-sm-7 col-xs-7"></div>
       <div class = "col-md-3 col-sm-3 col-xs-3"><p style = "font-size:30px;">شرکت های ثبت شده:</p></div>
     </div>
   
@@ -184,7 +75,8 @@
                 <tr >  
                   <th style="text-align:right;">نام&nbsp;شرکت</th>  
                   <th style="text-align:right;">آدرس وبگاه</th>  
-                 <th style="text-align:right;">محل شرکت</th> 
+                 <th style="text-align:right;">محل شرکت</th>  
+                  <th style="text-align:right;"></th>  
                 </tr>  
             </thead>  
             <tbody>  
@@ -192,12 +84,14 @@
                   <td>عمید رایانه شریف</td>  
                   <td>arsh.ir</td>  
                   <td>جنب مترو شریف</td>  
+                  <td><a href="user_profile.html" class="btn btn-default" role="button">ثبت آگهی استخدام برای شرکت</a></td>
                 </tr> 
 
 <tr>  
                   <td>عمید رایانه شریف</td>  
                   <td>arsh.ir</td>  
                   <td>جنب مترو شریف</td>  
+                  <td><a href="user_profile.html" class="btn btn-default" role="button">ثبت آگهی استخدام برای شرکت</a></td>
                 </tr> 
 
                  
@@ -207,8 +101,10 @@
       </div>
   </div>
     <hr>
+
     <div class = "row" >
-      <div class = "col-md-9 col-sm-9 col-xs-9"></div>
+      <a href="creat_new_project.html" class="btn btn-info col-md-2 col-sm-2 col-xs-2" role="button">ایجاد پروژه جدید</a>
+      <div class = "col-md-7 col-sm-7 col-xs-7"></div>
       <div class = "col-md-3 col-sm-3 col-xs-3"><p style = "font-size:30px;">پروژه های ثبت شده:</p></div>
     </div>
   
@@ -355,6 +251,8 @@
       </div>
   </div>
 
+
+
   <hr>
 
     <div class = "row" >
@@ -482,7 +380,128 @@
   </div>
 
 
+    <hr>
 
+    <div class = "row" >
+      <div class = "col-md-9 col-sm-9 col-xs-9"></div>
+      <div class = "col-md-3 col-sm-3 col-xs-3"><p style = "font-size:30px;">اطلاعات رزومه:</p></div>
+    </div>
+    
+    <hr>
+
+    <div class = "row" >
+      <div class = "col-md-9 col-sm-9 col-xs-9">این قسمت برای توضیحاتیست که خود کاربر میخواهد ارائه دهد. برای مثال اگر مقام یا جایگاه خاصی را در مسابقه یا المپیاد کسب کرده است. یا اگر مایل به ذکر مدرک تحصیلی و دانشگاه خود میباشد و ...</div>
+      <div class = "col-md-3 col-sm-3 col-xs-3">توضیحات:</div>
+    </div>
+    <hr>
+
+    <div class = "row" >
+      <div class = "col-md-9 col-sm-9 col-xs-9"></div>
+      <div class = "col-md-3 col-sm-3 col-xs-3">مهارت های شما:</div>
+    </div>
+
+
+  
+    <div style="margin:20px auto" class= "table-body container">  
+      <div class="table-responsive">
+      <table id="myTable"class="table hover" collapsing="0" width="100%" >
+            <thead>  
+                <tr >  
+                  <th style="text-align:right;">عنوان&nbsp;مهارت</th>  
+                  <th style="text-align:right;">میزان تسلط </th>   
+                  <th style="text-align:right;">توضیحات</th>  
+                </tr>  
+            </thead>  
+            <tbody>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr> 
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr> 
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr> 
+               <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr> 
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr> 
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>  
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>
+                <tr>  
+                  <td>برنامه نویسی اندروید</td>  
+                  <td>متوسط</td>  
+                  <td>مدرک مجتمع فنی تابستان سال 94</td>  
+                </tr>
+            </tbody>  
+          </table>  
+      </div>
+  </div>
 
 </div>
 
@@ -496,10 +515,6 @@ $(document).ready(function (){
 
     $('#projctsTable').on( 'click', 'tbody tr', function () {
         window.location.href = "project_details.html";
-} );
-
-    $('#companyTable').on( 'click', 'tbody tr', function () {
-        window.location.href = "company_details.html";
 } );
 });
  

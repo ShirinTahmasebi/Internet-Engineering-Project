@@ -8,5 +8,5 @@ function closeNav() {
 
 function openLink()
 {
-	window.location.href = "first_page.html";
+	window.location.href = "first_page.jsp";
 }

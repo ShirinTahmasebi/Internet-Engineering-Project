@@ -12,11 +12,17 @@
   	<script type="text/javascript" src="js/jquery-latest.min.js"></script>
     
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+      <%@ page 
+language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"
+%>
     
   </head>
 
   <body>
-<script src="js/menu_contents.js"></script>
+<%@ include file="menu.jsp" %> 
   <div id="form-div">
     <form class="form" id="form1"  role="form" method="post">
       <div class = "container" dir="rtl">

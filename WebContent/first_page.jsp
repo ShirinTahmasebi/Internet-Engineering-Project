@@ -10,12 +10,17 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/first_page_style.css">
 	<title>Collapsing Header Effect</title>
+  <%@ page 
+language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"
+%>
 </head>
 <body>
 
 <div id ="container">
 	<header>
-		<script src="js/menu_contents.js"></script>
+		<%@ include file="menu.jsp" %> 
 	</header>
 
 	<div id="banner">

@@ -5,6 +5,13 @@
 <link rel="stylesheet" type="text/css" href="css/faq_style.css">
 
 <script src="js/jquery-latest.min.js" type="text/javascript"></script>
+
+    <%@ page 
+language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"
+%>
+
 <script type="text/javascript">
 $(document).ready(function($) {
        $('#accordion div').hide();
@@ -18,7 +25,7 @@ $(document).ready(function($) {
 </script>
 
 <body>
-	<script src="js/menu_contents.js"></script>
+	<%@ include file="menu.jsp" %> 
 
 	
 <div id="accordion" dir="rtl">

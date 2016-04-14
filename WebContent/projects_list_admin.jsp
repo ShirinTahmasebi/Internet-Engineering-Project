@@ -6,12 +6,16 @@
   <link rel="stylesheet" href="css/projects_list_admin_style.css">
 
   <script type="text/javascript" src="js/jquery-latest.min.js"></script>
-    
+    <%@ page 
+language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"
+%>    
    </head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
 <body>
-	<script src="js/menu_contents.js"></script>
+	<%@ include file="menu.jsp" %> 
 
 	<div class="container">
  

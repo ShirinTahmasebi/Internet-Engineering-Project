@@ -5,8 +5,10 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">   
 <script src="js/jquery-latest.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <body style= " text-align: justify; text-justify: inter-word;">
-	<script src="js/menu_contents.js"></script>
+	<%@ include file="menu.jsp" %> 
+	  
 
 	<div class = "container" dir="rtl">
 		<hr>

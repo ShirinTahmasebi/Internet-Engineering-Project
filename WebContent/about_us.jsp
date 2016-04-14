@@ -7,10 +7,16 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" />
   <link href="css/about_us_style.css" type="text/css" rel="stylesheet" />
+  
+  <%@ page 
+language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"
+%>
 </head>
 <body>
 
-<script src="js/menu_contents.js"></script>
+<%@ include file="menu.jsp" %> 
 <div style="height:50px;"></div>
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">

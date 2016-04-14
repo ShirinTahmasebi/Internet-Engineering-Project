@@ -4,15 +4,16 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/recommendation_style.css">
-
-
-    
-    
+    <link rel="stylesheet" type="text/css" href="css/recommendation_style.css">  
+        <%@ page 
+language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"
+%>
   </head>
 
   <body>
-<script src="js/menu_contents.js"></script>
+<%@ include file="menu.jsp" %> 
     <div id="form-main" dir = "rtl">
   <div id="form-div">
     <form class="form" id="form1">
