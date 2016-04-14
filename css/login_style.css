@@ -97,6 +97,23 @@
 }
 
 
+#password_double{
+	background-image: url('../img/password_double.png');
+	background-size: 30px 30px;
+	padding-right: 60px;
+	background-position: right 11px top 8px;
+	background-repeat: no-repeat;
+}
+
+#password_double:focus{
+	background-image: url('../img/password_double.png');
+	background-size: 30px 30px;
+	padding-right: 60px;
+	background-position: right 11px top 8px;
+	background-repeat: no-repeat;
+}
+
+
 #email{
 	background-image: url('../img/contact_us_mail.svg');
 	background-size: 30px 30px;
