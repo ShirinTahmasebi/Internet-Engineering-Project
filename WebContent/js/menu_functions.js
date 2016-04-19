@@ -10,3 +10,13 @@ function openLink()
 {
 	window.location.href = "first_page.jsp";
 }
+
+function openLoginLink()
+{
+	window.location.href = "login.jsp";
+}
+
+function openProfileLink()
+{
+	window.location.href = "user_profile_editable.jsp";
+}

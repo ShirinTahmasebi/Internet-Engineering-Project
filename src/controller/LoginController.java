@@ -28,7 +28,8 @@ public class LoginController extends HttpServlet{
 	    
 		Response.initialize(response);
 		HttpSession session = request.getSession();
-		String userName=request.getParameter(Tag.USER_NAME);
+		String userName= new String(request.getParameter(Tag.USER_NAME).getBytes("8859_1"), "UTF-8");
+		//userName = new String(userName.getBytes(), "UTF-8");
 		String password=request.getParameter(Tag.PASSWORD);
 		
 		User user =new User();
@@ -37,20 +38,19 @@ public class LoginController extends HttpServlet{
 		request.setAttribute(Tag.USER ,user);
 		session.setAttribute(Tag.USER, user);
 		
+	
 		boolean status= true;
 		
 		if(status){
+			RequestDispatcher rd=request.getRequestDispatcher(Tag.FIRST_PAGE);
+			rd.forward(request, response);
+		}
+		else{
 			RequestDispatcher rd=request.getRequestDispatcher(Tag.LOGIN_PAGE);
 			rd.forward(request, response);
 		}
 	}
 	
 	
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
-	}
-
+	
 }

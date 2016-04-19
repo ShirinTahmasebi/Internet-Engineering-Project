@@ -25,11 +25,11 @@ pageEncoding="UTF-8"
     		
     		<form class="form" id="form1"  role="form" method="post" action = "LoginController">
       			<p class="name" >
-        			<input name="userName" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="نام کاربری" id="name" />
+        			<input name="userName" required  oninvalid="this.setCustomValidity('لطفا نام کاربری را درست وارد کنید ')" type="text" class="feedback-input" placeholder="نام کاربری" id="name" />
       			</p>
       
       			<p class="password">
-        			<input name="password" type="text" class="validate[required,custom[email]] feedback-input" id="password" placeholder="رمز عبور" />
+        			<input name="password"  type="password" class=" feedback-input" id="password" placeholder="رمز عبور" />
       			</p>
       
       			<div class = "row" >
@@ -47,7 +47,34 @@ pageEncoding="UTF-8"
   			</div>
   		</div>
     
-    
+    <script type="text/javascript">
+    function validateUsername(fld) {
+        var error = "";
+        var illegalChars = /\W/; // allow letters, numbers, and underscores
+     
+        if (fld.value == "") {
+            fld.style.background = 'Yellow';
+            error = "You didn't enter a username.\n";
+            alert(error);
+            return false;
+     
+        } else if ((fld.value.length < 5) || (fld.value.length > 15)) {
+            fld.style.background = 'Yellow';
+            error = "The username is the wrong length.\n";
+    		alert(error);
+    		return false;
+     
+        } else if (illegalChars.test(fld.value)) {
+            fld.style.background = 'Yellow';
+            error = "The username contains illegal characters.\n";
+    		alert(error);
+    		return false;
+     
+        } else {
+            fld.style.background = 'White';
+        }
+        return true;
+    }</script>
   </body>
 </html>
  
