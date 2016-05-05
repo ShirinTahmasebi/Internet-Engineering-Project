@@ -21,6 +21,12 @@ public class LoginController extends HttpServlet{
 	private static final long serialVersionUID = -4015599647677928668L;
 	
 	@Override
+	public void init() throws ServletException {
+		super.init();
+		User.setUserList();
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -32,21 +38,25 @@ public class LoginController extends HttpServlet{
 		//userName = new String(userName.getBytes(), "UTF-8");
 		String password=request.getParameter(Tag.PASSWORD);
 		
-		User user =new User();
-		user.setUserName(userName);
-		user.setPassword(password);
-		request.setAttribute(Tag.USER ,user);
-		session.setAttribute(Tag.USER, user);
+		User user = new User(userName, password);
 		
-	
-		boolean status= true;
+		
+		
+		boolean status= false;
+		
+		if (user.contains()) {
+			status = true;
+		}
+		
 		
 		if(status){
-			RequestDispatcher rd=request.getRequestDispatcher(Tag.FIRST_PAGE);
+			request.setAttribute(Tag.USER ,user);
+			session.setAttribute(Tag.USER, user);
+			RequestDispatcher rd = request.getRequestDispatcher(Tag.FIRST_PAGE);
 			rd.forward(request, response);
 		}
 		else{
-			RequestDispatcher rd=request.getRequestDispatcher(Tag.LOGIN_PAGE);
+			RequestDispatcher rd = request.getRequestDispatcher(Tag.LOGIN_PAGE);
 			rd.forward(request, response);
 		}
 	}

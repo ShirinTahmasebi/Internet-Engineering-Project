@@ -20,7 +20,7 @@ pageEncoding="UTF-8"
 
      <div class = "row" >
 
-      <a href="edit_profile.html" class="btn  editProfileBtn btn-block" role="button">ویرایش پروفایل</a>
+      <a href="edit_profile.jsp" class="btn  editProfileBtn btn-block" role="button">ویرایش پروفایل</a>
    
     </div>
 		<hr>

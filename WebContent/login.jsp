@@ -25,7 +25,7 @@ pageEncoding="UTF-8"
     		
     		<form class="form" id="form1"  role="form" method="post" action = "LoginController">
       			<p class="name" >
-        			<input name="userName" required  oninvalid="this.setCustomValidity('لطفا نام کاربری را درست وارد کنید ')" type="text" class="feedback-input" placeholder="نام کاربری" id="name" />
+        			<input name="userName" type="text" class="feedback-input" placeholder="نام کاربری" id="name" />
       			</p>
       
       			<p class="password">
