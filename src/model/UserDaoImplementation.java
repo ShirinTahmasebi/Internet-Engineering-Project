@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import utils.Tag;
+
+import controller.LoginController;
+
 public class UserDaoImplementation implements UserDao {
 
 	static List<User> users = new ArrayList<User>();
@@ -56,6 +60,11 @@ public class UserDaoImplementation implements UserDao {
 		for (int i = 0; i < 10; i++) {
 			users.add(new User(UUID.randomUUID().toString(), "user" + i, i + "", i + "@gmail.com"));
 		}	
+	}
+
+	public User getCurrentUser() {
+		User user = (User) LoginController.session.getAttribute(Tag.USER);
+		return getUser(user);
 	}
 	
 }

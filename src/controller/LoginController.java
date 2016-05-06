@@ -21,6 +21,7 @@ public class LoginController extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = -4015599647677928668L;
+	public static HttpSession session;
 	
 	
 	@Override
@@ -37,7 +38,7 @@ public class LoginController extends HttpServlet{
 	    
 	    
 		Response.initialize(response);
-		HttpSession session = request.getSession();
+		session = request.getSession();
 		String userName= new String(request.getParameter(Tag.USER_NAME).getBytes("8859_1"), "UTF-8");
 		//userName = new String(userName.getBytes(), "UTF-8");
 		String password=request.getParameter(Tag.PASSWORD);

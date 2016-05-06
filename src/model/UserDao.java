@@ -7,6 +7,7 @@ public interface UserDao {
 	   public List<User> getAllUsers();
 	   public User getUser(User user);
 	   public User getUser(String userName);
+	   public User getCurrentUser();
 	   public void addUser(User user);
 	   public void updateUser(User user);
 	   public void deleteUser(User user);
