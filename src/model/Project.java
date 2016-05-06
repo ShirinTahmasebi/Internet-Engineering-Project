@@ -1,6 +1,5 @@
 package model;
 
-import java.util.UUID;
 
 public class Project {
 	String projectId;
@@ -11,14 +10,12 @@ public class Project {
 	String budget;
 	String description;
 	
-	public Project()
-	{
-		setProjectId(UUID.randomUUID().toString());
+	public Project(){
+		setProjectId(Utils.generateUUID());
 	}
 	
-	public Project(String projectName)
-	{
-		setProjectId(UUID.randomUUID().toString());
+	public Project(String projectName){
+		setProjectId(Utils.generateUUID());
 		setProjectName(projectName);
 	}
 	

@@ -134,6 +134,7 @@ pageEncoding="UTF-8"
                   <th style="text-align:right;">کارفرما</th>  
                   <th style="text-align:right;">مهارت&nbsp;های&nbsp;مورد&nbsp;نیاز</th>  
                   <th style="text-align:right;">پایان</th>  
+                  <th style="display:none;"></th>  
                 </tr>  
             </thead>  
             <tbody>
@@ -145,6 +146,7 @@ pageEncoding="UTF-8"
             		out.println("<td>" + ((project.getAdminName()!= null)? project.getAdminName():"نامشخص") +  "</td>");
             		out.println("<td>" + ((project.getNeededSkills()!= null)? project.getNeededSkills():"نامشخص") + "</td>");
             		out.println("<td>" + ((project.getDeadline()!= null)? project.getDeadline():"نامشخص")+ "</td>");
+            		out.println("<td style='display:none;'>" + ((project.getProjectId()!= null)? project.getProjectId():"نامشخص")+ "</td>");
             		out.println("</tr>");
             		
             	}
@@ -416,16 +418,80 @@ pageEncoding="UTF-8"
 
 $(document).ready(function (){
 
+	
+ 	var table = document.getElementById("projctsTable");
+ 	var tbody = table.getElementsByTagName("tbody")[0];
+ 	tbody.onclick = function (e) {
+        
+        e = e || window.event;
+   		var data = [];
+     	var target = e.srcElement || e.target;
+     	while (target && target.nodeName !== "TR") {
+        	target = target.parentNode;
+     	}
+     	var cell4 = "";
+     	if (target) {
+        	var cells = target.getElementsByTagName("td");
+         	for (var i = 0; i < cells.length; i++) {
+            	data.push(cells[i].innerHTML);
+         	}
+         	cell4 = cells[4].innerHTML; 
+         	//alert(cells[4].innerHTML + "");
+     	}
+     	window.location.href = "project_details.jsp?projectId=" + cell4;
 
-    $('#projctsTable').on( 'click', 'tbody tr', function () {
-        window.location.href = "project_details.jsp";
-} );
+	}; 
 });
  
+
+
+//$(document).ready(function (){
+
+
+////     $('#projctsTable').on( 'click', 'tbody tr', function () {
+     
+//      var table = document.getElementById("projctsTable");
+//      var tbody = table.getElementsByTagName("tbody")[0];
+//      tbody.onclick = function (e) {
+//          e = e || window.event;
+//          var data = [];
+//          var target = e.srcElement || e.target;
+//          while (target && target.nodeName !== "TR") {
+//              target = target.parentNode;
+//          }
+//          if (target) {
+//              var cells = target.getElementsByTagName("td");
+//              for (var i = 0; i < cells.length; i++) {
+//                  data.push(cells[i].innerHTML);
+//              }
+//          }
+//          //alert(data);
+//          window.location.href = "project_details.jsp?projectId=" + cell[4] ; 
+//      };
+     
+//// } );
+//});
+
+
+
+
+//      	var form = $('<form></form>');
+
+//         form.attr("method", "post");
+//         form.attr("action", "project_details.jsp");
+
+//             var field = $('<input></input>');
+
+//             field.attr("projectId", cell[4]);
+//             form.append(field);
+            
+//         // The form needs to be a part of the document in
+//         // order for us to be able to submit it.
+//         $(document.body).append(form);
+//         form.submit();
+     	//window.location.href = "?projectNo=" + cell[4];
 
 </script>
 
 </body>
 </html>
-
-
