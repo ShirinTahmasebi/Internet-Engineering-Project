@@ -59,12 +59,31 @@ public class UserDaoImplementation implements UserDao {
 	public void initializeUserList(){
 		for (int i = 0; i < 10; i++) {
 			users.add(new User(UUID.randomUUID().toString(), "user" + i, i + "", i + "@gmail.com"));
-		}	
+		}
+		users.get(0).setGender(1);
+		users.get(0).setCity("تهران");
+		users.get(0).setBirthDate("31 شهریور سال 1373");
 	}
 
 	public User getCurrentUser() {
 		User user = (User) LoginController.session.getAttribute(Tag.USER);
 		return getUser(user);
 	}
+
+	public String getGenderString(int genderCode) {
+		switch (genderCode) {
+		case 0:
+			return "نامشخص";
+		case 1:
+			return "زن";
+		case 2:
+			return "مرد";
+
+		default:
+			return "نامشخص";
+		}
+	}
+	
+	
 	
 }

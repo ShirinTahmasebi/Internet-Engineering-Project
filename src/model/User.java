@@ -1,5 +1,6 @@
 package model;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -13,7 +14,7 @@ public class User {
 	String city;
 	String birthDate;
 	String resumeDescription;
-	Set<Project> createdProject;
+	Set<Project> createdProject = new HashSet<Project>();
 	
 
 	public User(String userName, String password)
@@ -143,6 +144,9 @@ public class User {
 		this.createdProject = createdProject;
 	}
 
+	public void addProject(Project project){
+		this.createdProject.add(project);
+	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

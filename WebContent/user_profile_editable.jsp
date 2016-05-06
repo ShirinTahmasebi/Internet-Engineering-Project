@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import="model.Dao"%>
+<%@page import="model.Project"%>
 <html>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/table_style.css">
@@ -28,35 +30,50 @@ pageEncoding="UTF-8"
     <hr>
 
 		<div class = "row" >
-			<div class = "col-md-9 col-sm-9 col-xs-9">شیرین طهماسبی</div>
+			<div class = "col-md-9 col-sm-9 col-xs-9">
+				<%if (session.getAttribute(Tag.USER)!= null) out.println(((User)session.getAttribute(Tag.USER)).getUserName());
+					else out.println("نا مشخص");%>
+			</div>
 			<div class = "col-md-3 col-sm-3 col-xs-3">نام و نام خانوادگی:</div>
 		</div>
 
 		<hr>
 
 		<div class = "row" >
-			<div class = "col-md-9 col-sm-9 col-xs-9">tahmasebi_shirin@yahoo.com</div>
+			<div class = "col-md-9 col-sm-9 col-xs-9">
+				<%if (session.getAttribute(Tag.USER)!= null && (((User)session.getAttribute(Tag.USER)).getEmail() != null)) out.println(((User)session.getAttribute(Tag.USER)).getEmail());
+					else out.println("نا مشخص");%>
+			</div>
 			<div class = "col-md-3 col-sm-3 col-xs-3">آدرس ایمیل:</div>
 		</div>
 
 		<hr>
 
 		<div class = "row" >
-			<div class = "col-md-9 col-sm-9 col-xs-9">زن</div>
+			<div class = "col-md-9 col-sm-9 col-xs-9">
+				<%if (session.getAttribute(Tag.USER)!= null) out.println(Dao.userDao.getGenderString(((User)session.getAttribute(Tag.USER)).getGender()));
+					else out.println("نا مشخص");%>
+			</div>
 			<div class = "col-md-3 col-sm-3 col-xs-3">جنسیت:</div>
 		</div>
 
 		<hr>
 
 		<div class = "row" >
-			<div class = "col-md-9 col-sm-9 col-xs-9">تهران</div>
+			<div class = "col-md-9 col-sm-9 col-xs-9">
+				<%if (session.getAttribute(Tag.USER)!= null && (((User)session.getAttribute(Tag.USER)).getCity() != null)) out.println(((User)session.getAttribute(Tag.USER)).getCity());
+					else out.println("نا مشخص");%>
+			</div>
 			<div class = "col-md-3 col-sm-3 col-xs-3">شهر:</div>
 		</div>
 
 		<hr>
 	
 		<div class = "row" >
-			<div class = "col-md-9 col-sm-9 col-xs-9">31 شهریور 1373</div>
+			<div class = "col-md-9 col-sm-9 col-xs-9">
+				<%if (session.getAttribute(Tag.USER)!= null && (((User)session.getAttribute(Tag.USER)).getBirthDate() != null)) out.println(((User)session.getAttribute(Tag.USER)).getBirthDate());
+					else out.println("نا مشخص");%>
+			</div>
 			<div class = "col-md-3 col-sm-3 col-xs-3">تاریخ تولد:</div>
 		</div>
 
@@ -119,132 +136,19 @@ pageEncoding="UTF-8"
                   <th style="text-align:right;">پایان</th>  
                 </tr>  
             </thead>  
-            <tbody>  
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr> 
-
-                <tr>  
-                  <td>ساخت پلاگین حرفه ای ورد پرس</td>  
-                  <td>طهماسبی</td>  
-                  <td>ورد پرس, طراحی وبسایت, برنامه نویسی تحت وب</td>  
-                  <td>29&nbsp;روز و 23&nbsp;ساعت</td> 
-                </tr>  
+            <tbody>
+            <%if(session.getAttribute(Tag.USER)!= null)
+            	for(Project project : ((User)session.getAttribute(Tag.USER)).getCreatedProject())
+            	{
+            		out.println("<tr>");
+            		out.println("<td>" + ((project.getProjectName()!= null)? project.getProjectName():"نامشخص") + "</td>");
+            		out.println("<td>" + ((project.getAdminName()!= null)? project.getAdminName():"نامشخص") +  "</td>");
+            		out.println("<td>" + ((project.getNeededSkills()!= null)? project.getNeededSkills():"نامشخص") + "</td>");
+            		out.println("<td>" + ((project.getDeadline()!= null)? project.getDeadline():"نامشخص")+ "</td>");
+            		out.println("</tr>");
+            		
+            	}
+            %>  
               
             </tbody>  
           </table>  

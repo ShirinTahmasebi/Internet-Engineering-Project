@@ -12,5 +12,6 @@ public interface UserDao {
 	   public void updateUser(User user);
 	   public void deleteUser(User user);
 	   public void initializeUserList();
+	   public String getGenderString(int genderCode);
 	
 }

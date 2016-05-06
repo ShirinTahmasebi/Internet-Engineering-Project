@@ -35,8 +35,8 @@ public class ProjectDaoImplementation implements ProjectDao{
 	}
 
 	public void initializeProjectsList() {
-		// TODO Auto-generated method stub
-		
+		for (int i = 0; i < 10; i++) 
+			projects.add(new Project("پروژه شماره  " + i));
 	}
 
 }

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.UUID;
+
 public class Project {
 	String projectId;
 	String projectName;
@@ -8,6 +10,19 @@ public class Project {
 	String deadline;
 	String budget;
 	String description;
+	
+	public Project()
+	{
+		setProjectId(UUID.randomUUID().toString());
+	}
+	
+	public Project(String projectName)
+	{
+		setProjectId(UUID.randomUUID().toString());
+		setProjectName(projectName);
+	}
+	
+	
 	/**
 	 * @return the projectId
 	 */
