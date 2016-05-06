@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Dao;
 import model.User;
+import model.UserDaoImplementation;
 import utils.Response;
 import utils.Tag;
 
@@ -20,10 +22,12 @@ public class LoginController extends HttpServlet{
 	 */
 	private static final long serialVersionUID = -4015599647677928668L;
 	
+	
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		User.setUserList();
+		Dao.userDao = new UserDaoImplementation(); 
+		Dao.userDao.initializeUserList();
 	}
 	
 	@Override
@@ -44,7 +48,7 @@ public class LoginController extends HttpServlet{
 		
 		boolean status= false;
 		
-		if (user.contains()) {
+		if (Dao.userDao.getUser(user) != null) {
 			status = true;
 		}
 		

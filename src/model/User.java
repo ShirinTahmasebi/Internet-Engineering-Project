@@ -1,7 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 public class User {
@@ -14,7 +13,8 @@ public class User {
 	String city;
 	String birthDate;
 	String resumeDescription;
-	static List<User> users = new ArrayList<User>();
+	Set<Project> createdProject;
+	
 
 	public User(String userName, String password)
 	{
@@ -81,6 +81,14 @@ public class User {
 		return resumeDescription;
 	}
 	/**
+	 * @return the createdProject
+	 */
+	public Set<Project> getCreatedProject() {
+		return createdProject;
+	}
+
+
+	/**
 	 * @param userId the userId to set
 	 */
 	public void setUserId(String userId) {
@@ -128,44 +136,37 @@ public class User {
 	public void setResumeDescription(String resumeDescription) {
 		this.resumeDescription = resumeDescription;
 	}
+	/**
+	 * @param createdProject the createdProject to set
+	 */
+	public void setCreatedProject(Set<Project> createdProject) {
+		this.createdProject = createdProject;
+	}
+
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "User [userName=" + userName + ", email=" + email
-				+ ", password=" + password + "]";
-	}
-	
-	public static void setUserList(){
-		for (int i = 0; i < 10; i++) {
-			users.add(new User(UUID.randomUUID().toString(), "user" + i, i + "", i + "@gmail.com"));
-		}	
-	}
-	
-	public static List<User> getUserList(){
-		return users;
+		return "User [userId=" + userId + ", userName=" + userName + ", email="
+				+ email + ", password=" + password + ", gender=" + gender
+				+ ", city=" + city + ", birthDate=" + birthDate
+				+ ", resumeDescription=" + resumeDescription
+				+ ", createdProject=" + createdProject + ", getUserId()="
+				+ getUserId() + ", getUserName()=" + getUserName()
+				+ ", getEmail()=" + getEmail() + ", getPassword()="
+				+ getPassword() + ", getGender()=" + getGender()
+				+ ", getCity()=" + getCity() + ", getBirthDate()="
+				+ getBirthDate() + ", getResumeDescription()="
+				+ getResumeDescription() + ", getCreatedProject()="
+				+ getCreatedProject() + "]";
 	}
 
-	public static void addUser(User user){
-		users.add(user);
-	}
+
 	
-	public boolean equals(User user){
-		if(this.userId.equals(user.userId))
-			return true;
-		return false;	
-	}
 	
 
-	public boolean contains(){
-		for (User user : users) {
-			if(this.userName.equals(user.userName) && this.password.equals(user.password))
-				return true;
-		}
-
-		return false;	
-	}
 	
 	
 	
