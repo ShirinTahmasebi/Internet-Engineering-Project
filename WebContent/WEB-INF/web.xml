@@ -30,4 +30,16 @@
   	<servlet-name>LogoutController</servlet-name>
   	<url-pattern>/LogoutController</url-pattern>
   </servlet-mapping>
+  
+  
+    
+  <!-- Create Project Servlet -->
+  <servlet>
+  	<servlet-name>CreateProjectController</servlet-name>
+  	<servlet-class>controller.CreateProjectController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CreateProjectController</servlet-name>
+  	<url-pattern>/CreateProjectController</url-pattern>
+  </servlet-mapping>
 </web-app>

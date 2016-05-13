@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.BindModels;
+import model.Dao;
 import model.User;
 import utils.Response;
 import utils.Tag;
@@ -21,6 +23,21 @@ public class LoginController extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = -4015599647677928668L;
+	public static HttpSession session;
+	
+	
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		Dao.init();
+		Dao.userDao.initializeUserList();
+		Dao.projectDao.initializeProjectsList();
+
+		BindModels.userProject(Dao.userDao.getAllUsers().get(0), Dao.projectDao.getAllProjects().get(0));
+		BindModels.userProject(Dao.userDao.getAllUsers().get(0), Dao.projectDao.getAllProjects().get(1));
+		BindModels.userProject(Dao.userDao.getAllUsers().get(0), Dao.projectDao.getAllProjects().get(2));
+		BindModels.userProject(Dao.userDao.getAllUsers().get(0), Dao.projectDao.getAllProjects().get(3));
+	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -29,26 +46,28 @@ public class LoginController extends HttpServlet{
 	    
 	    
 		Response.initialize(response);
-		HttpSession session = request.getSession();
+		session = request.getSession();
 		String userName= new String(request.getParameter(Tag.USER_NAME).getBytes("8859_1"), "UTF-8");
-		//userName = new String(userName.getBytes(), "UTF-8");
 		String password=request.getParameter(Tag.PASSWORD);
 		
-		User user =new User();
-		user.setUserName(userName);
-		user.setPassword(password);
-		request.setAttribute(Tag.USER ,user);
-		session.setAttribute(Tag.USER, user);
 		
-	
-		boolean status= true;
+		
+		
+		boolean status= false;
+		
+		if (Dao.userDao.getUser(new User(userName, password)) != null) {
+			status = true;
+		}
+		
 		
 		if(status){
-			RequestDispatcher rd=request.getRequestDispatcher(Tag.FIRST_PAGE);
+			request.setAttribute(Tag.USER, Dao.userDao.getUser(userName));
+			session.setAttribute(Tag.USER, Dao.userDao.getUser(userName));
+			RequestDispatcher rd = request.getRequestDispatcher(Tag.FIRST_PAGE);
 			rd.forward(request, response);
 		}
 		else{
-			RequestDispatcher rd=request.getRequestDispatcher(Tag.LOGIN_PAGE);
+			RequestDispatcher rd = request.getRequestDispatcher(Tag.LOGIN_PAGE);
 			rd.forward(request, response);
 		}
 	}
