@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginController extends HttpServlet {
 
     private static EntityManager em;
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -44,7 +44,7 @@ public class LoginController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginController</title>");            
+            out.println("<title>Servlet LoginController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LoginController at " + request.getContextPath() + "</h1>");
@@ -53,18 +53,17 @@ public class LoginController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginController</title>");            
+            out.println("<title>Servlet LoginController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LoginController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            
-            
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginController</title>");            
+            out.println("<title>Servlet LoginController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LoginController at " + request.getContextPath() + "</h1>");
@@ -85,7 +84,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PrintWriter printWriter  = response.getWriter();
+        PrintWriter printWriter = response.getWriter();
         printWriter.write("WROTE!!");
 //        try{
 //            
@@ -121,10 +120,8 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
 //        PrintWriter out = response.getWriter();
 //        out.write("WROTE!!");
-          try{
-            
-            
-            
+        try {
+
             EntityManagerFactory emf;
             emf = Persistence.createEntityManagerFactory("UserService");
             em = emf.createEntityManager();
@@ -133,12 +130,11 @@ public class LoginController extends HttpServlet {
             createEmployee(55, "Jack", " Dorsey", "Imaginea");
             createEmployee(66, "Sam", "Fox", "Imaginea");
             emf.close();
-        }
-        catch(Exception e){
-           
-                PrintWriter out = response.getWriter();
-                out.write("HERE IS THE EXCEPTIONS :" + e.toString());
-            
+        } catch (Exception e) {
+
+            PrintWriter out = response.getWriter();
+            out.write("HERE IS THE EXCEPTIONS :" + e.toString());
+
         }
         processRequest(request, response);
     }
@@ -153,15 +149,13 @@ public class LoginController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    
-     
     private static void createEmployee(int id, String firstName, String lastName, String dept) {
         em.getTransaction().begin();
         User emp = new User();
         emp.setUsername(firstName);
 //        emp.set(lastName);
 //        emp.setPassword(dept);
-        
+
         em.persist(emp);
         em.getTransaction().commit();
     }

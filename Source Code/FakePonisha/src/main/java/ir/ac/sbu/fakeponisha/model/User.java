@@ -30,8 +30,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
     @NamedQuery(name = "User.findByUserId", query = "SELECT u FROM User u WHERE u.userId = :userId"),
-    @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username")})
+    @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
+    @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password"),
+    @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")})
 public class User implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,6 +44,13 @@ public class User implements Serializable {
     @Size(max = 40)
     @Column(name = "username")
     private String username;
+    @Size(max = 20)
+    @Column(name = "password")
+    private String password;
+    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Size(max = 50)
+    @Column(name = "email")
+    private String email;
     @JoinColumn(name = "resumeId", referencedColumnName = "resumeId")
     @OneToOne
     private Resume resumeId;
@@ -66,6 +76,22 @@ public class User implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Resume getResumeId() {
@@ -98,7 +124,12 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "ir.ac.sbu.fakeponisha.model.User[ userId=" + userId + " ]";
+        return "ir.ac.sbu.fakeponisha.model.User[" +
+                " userId=" + userId +
+                " userName=" + username +
+                " email=" + email +
+                " password=" + password +
+                " ]";
     }
-    
+
 }

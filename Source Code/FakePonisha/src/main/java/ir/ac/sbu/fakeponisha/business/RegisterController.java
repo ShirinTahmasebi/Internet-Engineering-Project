@@ -1,15 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ir.ac.sbu.fakeponisha.business;
 
 import ir.ac.sbu.fakeponisha.model.User;
+import ir.ac.sbu.fakeponisha.persistance.UserDao;
+import ir.ac.sbu.fakeponisha.persistance.UserDaoImplementation;
 import ir.ac.sbu.fakeponisha.utils.Response;
 import ir.ac.sbu.fakeponisha.utils.Tag;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,10 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Shirin
- */
 @WebServlet(name = "RegisterController", urlPatterns = {"/RegisterController"})
 public class RegisterController extends HttpServlet {
 
@@ -51,7 +45,7 @@ public class RegisterController extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. PostMethod is used to register users">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -77,21 +71,39 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        UserDao userDao = new UserDaoImplementation();
         Response.initialize(response);
         HttpSession session = request.getSession();
         String userName = new String(request.getParameter(Tag.USER_NAME).getBytes("8859_1"), "UTF-8");
-        //userName = new String(userName.getBytes(), "UTF-8");
         String password = request.getParameter(Tag.PASSWORD);
+        String email = request.getParameter(Tag.EMAIL);
 
         User user = new User();
         user.setUsername(userName);
         user.setPassword(password);
+        List<User> users = userDao.getAllUsers();
+        //userDao.insertUser(user);
         request.setAttribute(Tag.USER, user);
         session.setAttribute(Tag.USER, user);
 
-        RequestDispatcher rd = request.getRequestDispatcher(Tag.LOGIN_PAGE);
-        rd.forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet RegisterController</title>");
+            out.println("</head>");
+            out.println("<body>");
+            for (User u : users) {
+                out.println("<h1>Servlet RegisterController at " + u.toString() + "</h1>");    
+            }
+            
+            out.println("</body>");
+            out.println("</html>");
+        }
+//        RequestDispatcher rd = request.getRequestDispatcher(Tag.LOGIN_PAGE);
+//        rd.forward(request, response);
     }
 
     /**
@@ -101,7 +113,7 @@ public class RegisterController extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        return "This servlet is used to register users in Ponisha site.";
+    }
 
 }

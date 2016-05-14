@@ -19,9 +19,9 @@
         <%@ include file="menu.jsp" %> 
         <div id="form-main" dir = "rtl">
             <div id="form-div">
-                <form class="form" id="form1"  role="form" method="post">
+                <form class="form" id="form1"  role="form" method="post" action="RegisterController">
                     <p class="name" >
-                        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="نام کاربری" id="name" />
+                        <input name="userName" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="نام کاربری" id="name" />
                     </p>
 
                     <p class="email" >
@@ -30,10 +30,6 @@
 
                     <p class="password">
                         <input name="password" type="text" class="validate[required,custom[email]] feedback-input" id="password" placeholder="رمز عبور" />
-                    </p>
-
-                    <p class="password_double">
-                        <input name="password" type="text" class="validate[required,custom[email]] feedback-input" id="password_double" placeholder="رمز عبور مجدد" />
                     </p>
 
                     <div class = "row" >
